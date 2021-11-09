@@ -15,6 +15,7 @@
 <?import javafx.scene.control.cell.PropertyValueFactory ?>
 <?import javafx.scene.control.cell.TextFieldTableCell ?>
 <?import fxmltableview.*?>
+<?import java.net.*?>
 
 
 
@@ -81,12 +82,12 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label layoutX="570.0" layoutY="201.0" text="Leading Company">
+            <Label fx:id="currentLeader" layoutX="570.0" layoutY="201.0" text="Leading Company">
                <font>
-                  <Font size="30.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="currentLeader" layoutX="42.0" layoutY="141.0" text="The">
+            <Label layoutX="42.0" layoutY="141.0" text="The">
                <font>
                   <Font name="System Bold" size="42.0" />
                </font>
@@ -101,16 +102,19 @@
                   <Font name="System Bold" size="42.0" />
                </font>
             </Label>
-            <TableView fx:id="tblCompanies" layoutX="10.0" layoutY="328.0" prefHeight="482.0" prefWidth="1261.0">
+            <TableView fx:id="tblCompanies" layoutX="10.0" layoutY="328.0" prefHeight="600.0" prefWidth="1880.0">
+     
+              
               <columns>
-                <TableColumn editable="true" fx:id="companyColumn" prefWidth="147.0" text="Company" />
-                <TableColumn editable="true" fx:id="priceColumn" prefWidth="175.0" text="Price" />
-                  <TableColumn fx:id="customersColumn" prefWidth="163.0" text="Customers" />
-                  <TableColumn fx:id="revenueColumn" prefWidth="159.0" text="Revenue" />
-                  <TableColumn fx:id="expensesColumn" prefWidth="222.0" text="Expenses" />
-                <TableColumn fx:id="totalColumn" prefWidth="243.0" text="Total" />
-                  <TableColumn fx:id="profitColumn" prefWidth="151.0" text="Profit" />
+                <TableColumn editable="true" fx:id="companyColumn" prefWidth="250.0" text="Company" />
+                <TableColumn editable="true" fx:id="priceColumn" prefWidth="250.0" text="Price" />
+                  <TableColumn fx:id="customersColumn" prefWidth="300.0" text="Customers" />
+                  <TableColumn fx:id="revenueColumn" prefWidth="250.0" text="Revenue" />
+                  <TableColumn fx:id="expensesColumn" prefWidth="300.0" text="Expenses" />
+                <TableColumn fx:id="totalColumn" prefWidth="300.0" text="Total" />
+                  <TableColumn fx:id="profitColumn" prefWidth="230.0" text="Profit" />
               </columns>
+     
             </TableView>
             <Button layoutX="42.0" layoutY="249.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="122.0" text="Play" onAction="#handleSubmitButtonAction">
                <font>
@@ -121,4 +125,7 @@
       </children>
     </AnchorPane>
   </children>
+  <stylesheets>
+    <URL value="file:///home/wneal/Lemma/FRC/Java/JavaFX/GPCGApp/fxmlstyle.css" />
+</stylesheets>
 </VBox>
