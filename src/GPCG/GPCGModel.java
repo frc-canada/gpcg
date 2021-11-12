@@ -1,6 +1,6 @@
 package src.GPCG;
 import java.util.ArrayList;
-//import java.util.InputMismatchException;
+
 
 public class GPCGModel{
 
@@ -10,9 +10,7 @@ public class GPCGModel{
     private float difficulty = 1; // Set a difficulty
     private int rounds=5; // Set a number of rounds
     private int round = 0;
-    //private String[] months = {"January", "February","March","April","May", "June","July","August","September","October","November","December"};
     private int numPlayers;
-    //private Scanner keyboard = new Scanner(System.in);
     private float averageFactor = 0.2f; //Not sure why this was used in the original game - the game was never commented!!!
     private float taxRate = 5;
     private float priceSum;
@@ -29,7 +27,8 @@ public class GPCGModel{
     private ArrayList<Float> expenses = new ArrayList<Float>();
     private ArrayList<Float> profit = new ArrayList<Float>();
     private ArrayList<Float> total = new ArrayList<Float>();
-        
+    private Boolean botPlayers = true;
+    private autonomousPlay autoPlay =  new autonomousPlay();
         
         
 //Class Constructor
@@ -57,27 +56,31 @@ public class GPCGModel{
     }
 }
 
-/*
-//Set Game Parameters:
-
-
-	public void setRounds(int r){
-		rounds = r;
-	}
-
-	public void setPlayers(int n){
-		numPlayers = n;
-	}
-
-*/
 //One game turn:
     public boolean turn(ArrayList<Float> pricesInput){
     //Input the prices
+    if(botPlayers){
+        //Capture the game state to send to autoPlay
+        GameDetails currentGameDetails = new GameDetails();
+        currentGameDetails.setNames(companyNames);
+        currentGameDetails.setPrices(prices);
+        currentGameDetails.setCustomers(customers);
+        currentGameDetails.setRevenue(revenue);
+        currentGameDetails.setExpenses(expenses);
+        currentGameDetails.setProfit(profit);
+        currentGameDetails.setTotal(profit);
+        prices.clear();
+        //Call the Autonomous Play class
+        for(int i =0; i<numPlayers;i++){
+            prices.add(autoPlay.strategy(i, currentGameDetails));
+        }
+    }
+    else{
     System.out.println("Setting Prices");
     System.out.println(pricesInput.size());
 	prices = pricesInput;
 	//Ensure that the following prices are of type float
-	
+    }
 	//Validate the input
 	if (!validate()){
 	    //Check that the prices are valid
@@ -109,15 +112,12 @@ public class GPCGModel{
       //Input prices as a space-separated string of digits
         for(int priceEntry=0; priceEntry<numPlayers;priceEntry++){
             //If the price is too low or too high, return false
-            System.out.println("Size of prices:");
-            System.out.println(prices.size());
             if (prices.get(priceEntry) <= 0 || prices.get(priceEntry) >= 100){
-                System.out.println("Validated False");
                 return false;
             }
          //If all prices are valid, return true
         }
-        System.out.println("Validated");
+        
         return true;
     }
 

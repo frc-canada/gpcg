@@ -19,7 +19,7 @@
 
 
 
-<VBox fx:id="root" fx:controller="src.GPCG.GPCGController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="root" fx:controller="src.GPCG.GPCGController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1880.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar prefHeight="40.0" prefWidth="1280.0" VBox.vgrow="NEVER">
       <menus>

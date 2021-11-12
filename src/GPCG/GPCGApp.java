@@ -9,8 +9,16 @@ import java.util.logging.Logger;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
-//import java.net.URL;
+/*
+Main application
 
+This application reads the FXML file, GPCGFXML.fxml and creates a main window based on that file.
+The FXML file calls  on the following:
+    (a) the GPCController class which, in turn, calls the CPCGModel (game data) and Company.java 
+    (details about each player's 'company'
+    (b) fxmlstyle.css - the CSS style sheet for the application
+
+*/
 public class GPCGApp extends Application{
     public static final String UI_FORM = "src/GPCG/GPCGFXML.fxml";
     
@@ -21,6 +29,7 @@ public class GPCGApp extends Application{
 
     @Override
     public void start(Stage stage){ 
+        //Call an FXML form; check for errors
         Parent parent = null;
         URL form = this.getClass().getClassLoader().getResource(UI_FORM);
         System.out.println(form);
@@ -35,11 +44,10 @@ public class GPCGApp extends Application{
 				e.printStackTrace();
             }
                
-        
+        //Initialize the application
         Scene scene = new Scene(parent);
         stage.setTitle("GPC Game");
         stage.setScene(scene);
-        //stage.setOnShown( (evt) -> loadTable(tblCompanies) );
         stage.show();
         
         }  
