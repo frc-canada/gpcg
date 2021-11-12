@@ -28,7 +28,7 @@ public class GPCGModel{
     private ArrayList<Float> profit = new ArrayList<Float>();
     private ArrayList<Float> total = new ArrayList<Float>();
     private Boolean botPlayers = true;
-    private autonomousPlay autoPlay =  new autonomousPlay();
+    private AutonomousPlay autoPlay =  new AutonomousPlay();
         
         
 //Class Constructor

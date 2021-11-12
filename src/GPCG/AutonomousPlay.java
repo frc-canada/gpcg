@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class autonomousPlay {
+public class AutonomousPlay {
     
     
-    public autonomousPlay(){
+    public AutonomousPlay(){
 
     }
 
@@ -41,8 +41,6 @@ public class autonomousPlay {
                 return strategy1(currentGameDetails);
         }
 
-
-        return 50f;
     }
 
 
