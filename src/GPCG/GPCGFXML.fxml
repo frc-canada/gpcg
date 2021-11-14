@@ -111,8 +111,8 @@
                   <TableColumn fx:id="customersColumn" prefWidth="300.0" text="Customers" />
                   <TableColumn fx:id="revenueColumn" prefWidth="250.0" text="Revenue" />
                   <TableColumn fx:id="expensesColumn" prefWidth="300.0" text="Expenses" />
-                <TableColumn fx:id="totalColumn" prefWidth="300.0" text="Total" />
                   <TableColumn fx:id="profitColumn" prefWidth="230.0" text="Profit" />
+                   <TableColumn fx:id="totalColumn" prefWidth="300.0" text="Total" />
               </columns>
      
             </TableView>

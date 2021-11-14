@@ -33,6 +33,9 @@ public class GPCGController{
             currentPrices.add(Float.parseFloat(tblCompanies.getColumns().get(1).getCellObservableValue(i).getValue().toString()));
             currentNames.add((tblCompanies.getColumns().get(0).getCellObservableValue(i).getValue().toString()));
                 }
+        for(int i=0;i<game.getPlayers();i++){
+            game.setName(i,currentNames.get(i));
+            }
         game.turn(currentPrices);
         updateTable();
         }
@@ -44,6 +47,7 @@ public class GPCGController{
         //Get New Data for the Table
         round = game.getRound();
         currentLeader.setText(game.getLeader());
+        roundNumber.setText(String.valueOf(game.getRound()));
         
         //Update the table
         for(int i = 0; i<game.getPlayers(); i++){
