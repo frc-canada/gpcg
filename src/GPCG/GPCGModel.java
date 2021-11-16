@@ -29,7 +29,7 @@ public class GPCGModel{
     private ArrayList<Float> total = new ArrayList<Float>();
     private Boolean botPlayers = false;
     private AutonomousPlay autoPlay =  new AutonomousPlay();
-        
+    
         
 //Class Constructor
     public GPCGModel(){
@@ -51,9 +51,9 @@ public class GPCGModel{
         expenses.add(0f);
         profit.add(0f);
         total.add(0f);
-        
+
         }
-    }
+}
 }
 
 //One game turn:
@@ -208,8 +208,6 @@ public class GPCGModel{
         }
 
     public float getPrice(int i){
-        System.out.println("Here is the length of prices:");
-        System.out.println(prices.size());
         return prices.get(i);
         }
 

@@ -1,13 +1,17 @@
 package src.GPCG;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+//import java.lang.Math;
+
+
+
 
 /*
 Main application
@@ -40,7 +44,7 @@ public class GPCGApp extends Application{
 			try {
 				parent = FXMLLoader.load(form);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				// Auto-generated catch block
 				e.printStackTrace();
             }
                
