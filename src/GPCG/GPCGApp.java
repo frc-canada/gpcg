@@ -10,9 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 //import java.lang.Math;
 
-
-
-
 /*
 Main application
 

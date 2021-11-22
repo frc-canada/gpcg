@@ -35,7 +35,6 @@ public class GPCGController{
                 }
         for(int i=0;i<game.getPlayers();i++){
             game.setName(i,currentNames.get(i));
-            game.setName(i, "Ted");
             }
         game.turn(currentPrices);
         updateTable();

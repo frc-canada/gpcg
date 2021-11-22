@@ -16,9 +16,9 @@ public class AutonomousPlay {
         float min = 0.0f;
         float max = 100.0f;
         Random r = new Random();
-        //ArrayList<String> n = new ArrayList<String>();
-        //n = currentGameDetails.getNames();
-        //System.out.println(n.get(2));
+        ArrayList<String> n = new ArrayList<String>();
+        n = currentGameDetails.getNames();
+        System.out.println(n.get(2));
         float randomNumber = min + r.nextFloat() * (max - min);
 
         return randomNumber;
