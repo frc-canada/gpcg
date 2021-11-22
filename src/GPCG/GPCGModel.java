@@ -76,8 +76,6 @@ public class GPCGModel{
         }
     }
     else{
-    System.out.println("Setting Prices");
-    System.out.println(pricesInput.size());
 	prices = pricesInput;
 	//Ensure that the following prices are of type float
     }
@@ -113,6 +111,7 @@ public class GPCGModel{
         for(int priceEntry=0; priceEntry<numPlayers;priceEntry++){
             //If the price is too low or too high, return false
             if (prices.get(priceEntry) <= 0 || prices.get(priceEntry) >= 100){
+                System.out.println("Please enter a price above 0 and less than  100");
                 return false;
             }
          //If all prices are valid, return true
