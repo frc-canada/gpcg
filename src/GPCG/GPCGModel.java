@@ -68,7 +68,8 @@ public class GPCGModel{
         currentGameDetails.setRevenue(revenue);
         currentGameDetails.setExpenses(expenses);
         currentGameDetails.setProfit(profit);
-        currentGameDetails.setTotal(profit);
+        currentGameDetails.setTotal(total);
+        currentGameDetails.setRound(round);
         prices.clear();
         //Call the Autonomous Play class
         for(int i =0; i<numPlayers;i++){

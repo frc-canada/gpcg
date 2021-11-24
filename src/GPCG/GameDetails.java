@@ -9,6 +9,7 @@ public class GameDetails {
     private ArrayList<Float> expenses = new ArrayList<Float>();
     private ArrayList<Float> profit = new ArrayList<Float>();
     private ArrayList<Float> total = new ArrayList<Float>();
+    private int round;
     public GameDetails(){
         
     }
@@ -41,6 +42,10 @@ public class GameDetails {
         return profit;
     }
 
+    public int getRound(){
+        return round;
+        }
+
     public void setNames(ArrayList<String> n){
         companyNames = n;
     }
@@ -67,5 +72,9 @@ public class GameDetails {
 
     public void setTotal(ArrayList<Float> t){
         total = t;
+    }
+
+    public void setRound(int r){
+        round = r;
     }
 }
