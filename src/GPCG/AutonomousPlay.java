@@ -44,7 +44,7 @@ public class AutonomousPlay {
                 }
 
             case 4:
-                return 60f;
+                return 90f;
 
             case 5:
                 return 70f;
