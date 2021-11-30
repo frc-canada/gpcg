@@ -13,7 +13,10 @@ public class AutonomousPlay {
     private float strategy_1234(GameDetails currentGameDetails){
 
         int r = currentGameDetails.getRound(); //What is the current round? Set r to the current round
-        ArrayList<Float> lastPrices = currentGameDetails.getPrices();
+        int myIndex = currentGameDetails.getMyIndex(); //This is my player's index (0,1,2,3,4, or 5)
+        ArrayList<Float> lastProfits = currentGameDetails.getProfit(); //Returns an ArrayList of the profits
+        float myProfit = lastProfits.get(myIndex); //myProfit is my profit from the last round
+        ArrayList<Float> lastPrices = currentGameDetails.getPrices(); //Returns an ArrayList
         switch(r){
             case 1:
                 return(35.40f);
@@ -50,8 +53,7 @@ public class AutonomousPlay {
                 return 70f;
 
             default:
-                return 12.23f; //If none of the cases work...
-
+                return 50f;
 
         }
 
@@ -74,7 +76,7 @@ public class AutonomousPlay {
             case 0:
                 return strategy1(currentGameDetails);
             case 1:
-                return strategy1(currentGameDetails);
+                return strategy_1234(currentGameDetails);
             case 2:
                 return strategy1(currentGameDetails);
             case 3:
