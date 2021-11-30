@@ -10,6 +10,7 @@ public class GameDetails {
     private ArrayList<Float> profit = new ArrayList<Float>();
     private ArrayList<Float> total = new ArrayList<Float>();
     private int round;
+    private int myIndex; //What is my player index?
     public GameDetails(){
         
     }
@@ -46,6 +47,9 @@ public class GameDetails {
         return round;
         }
 
+    public int getMyIndex(){
+        return myIndex;
+    }
     public void setNames(ArrayList<String> n){
         companyNames = n;
     }
@@ -76,5 +80,9 @@ public class GameDetails {
 
     public void setRound(int r){
         round = r;
+    }
+
+    public void setMyIndex(int i){
+        myIndex = i;
     }
 }

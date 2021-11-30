@@ -73,6 +73,7 @@ public class GPCGModel{
         prices.clear();
         //Call the Autonomous Play class
         for(int i =0; i<numPlayers;i++){
+            currentGameDetails.setMyIndex(i);
             prices.add(autoPlay.strategy(i, currentGameDetails));
         }
     }
