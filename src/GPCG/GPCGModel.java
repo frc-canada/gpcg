@@ -9,7 +9,7 @@ public class GPCGModel{
     private final int population = 1000000; //Set a population of 1000000
     private float difficulty = 1; // Set a difficulty
     private int rounds=5; // Set a number of rounds
-    private int round = 0;
+    private int round = 1;
     private int numPlayers;
     private float averageFactor = 0.2f; //Not sure why this was used in the original game - the game was never commented!!!
     private float taxRate = 5;
@@ -27,7 +27,7 @@ public class GPCGModel{
     private ArrayList<Float> expenses = new ArrayList<Float>();
     private ArrayList<Float> profit = new ArrayList<Float>();
     private ArrayList<Float> total = new ArrayList<Float>();
-    private Boolean botPlayers = false;
+    private Boolean botPlayers = true;
     private AutonomousPlay autoPlay =  new AutonomousPlay();
     
         
@@ -59,6 +59,8 @@ public class GPCGModel{
 //One game turn:
     public boolean turn(ArrayList<Float> pricesInput){
     //Input the prices
+    System.out.println("In game model.  Prices size:");
+    System.out.println(prices.size());
     if(botPlayers){
         //Capture the game state to send to autoPlay
         GameDetails currentGameDetails = new GameDetails();
@@ -70,12 +72,13 @@ public class GPCGModel{
         currentGameDetails.setProfit(profit);
         currentGameDetails.setTotal(total);
         currentGameDetails.setRound(round);
-        prices.clear();
+        ArrayList<Float> botPrices = new ArrayList<Float>();
         //Call the Autonomous Play class
         for(int i =0; i<numPlayers;i++){
             currentGameDetails.setMyIndex(i);
-            prices.add(autoPlay.strategy(i, currentGameDetails));
+            botPrices.add(autoPlay.strategy(i, currentGameDetails));
         }
+        prices = botPrices;
     }
     else{
 	prices = pricesInput;
